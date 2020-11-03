@@ -30,6 +30,15 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="add\settings.py" />
+    <Compile Include="add\urls.py" />
+    <Compile Include="add\wsgi.py" />
+    <Compile Include="calc\admin.py" />
+    <Compile Include="calc\apps.py" />
+    <Compile Include="calc\models.py" />
+    <Compile Include="calc\tests.py" />
+    <Compile Include="calc\urls.py" />
+    <Compile Include="calc\views.py" />
     <Compile Include="manage.py" />
     <Compile Include="Rightsize\__init__.py" />
     <Compile Include="Rightsize\settings.py" />
@@ -37,10 +46,51 @@
     <Compile Include="Rightsize\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="add\__pycache__\settings.cpython-37.pyc" />
+    <Content Include="add\__pycache__\urls.cpython-37.pyc" />
+    <Content Include="add\__pycache__\wsgi.cpython-37.pyc" />
+    <Content Include="add\__pycache__\__init__.cpython-37.pyc" />
+    <Content Include="calc\__pycache__\models.cpython-37.pyc" />
+    <Content Include="calc\__pycache__\urls.cpython-37.pyc" />
+    <Content Include="calc\__pycache__\views.cpython-37.pyc" />
+    <Content Include="calc\__pycache__\__init__.cpython-37.pyc" />
     <Content Include="requirements.txt" />
+    <Content Include="templates\base.html" />
+    <Content Include="templates\count.html" />
+    <Content Include="templates\dichot.html" />
+    <Content Include="templates\Files for Dan\measure.html" />
+    <Content Include="templates\Files for Dan\measure_res.html" />
+    <Content Include="templates\Files for Dan\multicat.html" />
+    <Content Include="templates\Files for Dan\multicat_res.html" />
+    <Content Include="templates\Files for Dan\survival.html" />
+    <Content Include="templates\Files for Dan\survival_res.html" />
+    <Content Include="templates\Files for Dan\ttest.html" />
+    <Content Include="templates\Files for Dan\ttest_res.html" />
+    <Content Include="templates\home.html" />
+    <Content Include="templates\home1.html" />
+    <Content Include="templates\index.html" />
+    <Content Include="templates\measure.html" />
+    <Content Include="templates\measure_res.html" />
+    <Content Include="templates\multicat.html" />
+    <Content Include="templates\multicat_res.html" />
+    <Content Include="templates\result.html" />
+    <Content Include="templates\Sexdichot.html" />
+    <Content Include="templates\Sexmeasure2Anova.html" />
+    <Content Include="templates\Sexsurvival.html" />
+    <Content Include="templates\step9.html" />
+    <Content Include="templates\survival.html" />
+    <Content Include="templates\survival_res.html" />
+    <Content Include="templates\ttest.html" />
+    <Content Include="templates\ttest_res.html" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="add\" />
+    <Folder Include="add\__pycache__\" />
+    <Folder Include="calc\" />
+    <Folder Include="calc\__pycache__\" />
     <Folder Include="Rightsize\" />
+    <Folder Include="templates\" />
+    <Folder Include="templates\Files for Dan\" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
