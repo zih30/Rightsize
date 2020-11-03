@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% csrf_token %}
+<html>
+
+<p>
+The null hypothesis that the means of the {k} populations are equal will be tested by an F test.  </p>
+<p>A p-value less than {{anova1.alpha}} will be considered statistically significant.
+</p>
+<p>
+Justification of sample size:
+<br>  
+The sample size of {{anova1.n_per_arm}} per arm was determined based on these assumptions:  power={{anova1.power}}; significance level of test={{anova1.alpha}}; within-arm standard deviation={{anova1.sigma}} 
+<br>and population means under the alternative hypothesis={{anova1.mus}}
+</p>
+
+
+</p>
+
+
+</html>
+{% endblock %}

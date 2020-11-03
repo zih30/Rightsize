@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% csrf_token %}
+
+    <h1>RIGHTSIZE at Pitt</h1>
+<form action="add" >
+<p id="demo"></p>    
+   <fieldset>
+        
+        Will you be using animals of both sexes?
+		<select id='both' name='both'>
+		<option value=0>No</option>
+		<option value=1>Yes</option>
+		</select>
+    </fieldset>
+ 	
+<input type="submit" />
+</form>
+
+{% endblock %}

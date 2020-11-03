@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+
+<form action="EndpointsWithSex">
+{% csrf_token %}
+<fieldset>
+	<div>
+       What is the type of the endpoint?
+		<select id='sexeffect' name='sexeffect' default=0>
+		<option value=1>dichotomous-FISHERS TEST</option>
+		<option value=2>survival- LOG RANK TEST</option>
+	{#--	<option value=3>measurement 2 arms- T-TEST</option> #}
+		<option value=4>measurement - 2 WAY ANOVA</option>
+	{#	<option value=5>multi-categorical- CHI SQUARE</option> #}
+		
+		</select>
+    </div>
+</fieldset>
+
+</br>
+<input type="submit" />
+</form>
+</html>
+{% endblock %}

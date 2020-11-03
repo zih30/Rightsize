@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+<li><a href="{% url 'home' %}">Home</a></li> 
+{% load static %}
+{% block content %}
+{% if flag == '1' %}
+The difference in survival between experimental groups will be assessed by a log-rank test at alpha={{logrank.alpha}}. </br>
+The sample size of {{logrank.n_per_arm}} was determined so that the global test would have <script>document.write(100*{{logrank.power}})</script>% power when, under the alternative hypothesis, 
+the median time to event is [{{logrank.matrix}}] and [{{logrank.matrixf}}].
+
+{% else %}
+<h4>The null hypothesis of no differences in survival between the arms will be tested by a </br> logrank test on the Kaplan-Meier estimates of the survival functions at alpha={{logrank.alpha}}.</br>
+</br>The sample size of {{logrank.n_per_arm}} animals per arm was derived by assuming that the median survival in the arms is [{{logrank.matrix}}] and that the animals will be followed until time {{logrank.observation}} </br>
+Under these assumptions, the test will have <script>document.write(100*{{logrank.power}})</script>% power to reject the null hypothesis.</h4>
+{% endif %}
+{% endblock %}

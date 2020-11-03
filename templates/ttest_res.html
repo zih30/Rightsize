@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<html>
+
+<form>
+<p>A two-sample, two-tailed t-test using Satterthwaite's approximation to the degrees of freedom 
+will be used to test the null hypothesis that the population of the "{{ttest1.arm1 }}" arm equals that of the "{{ttest1.arm2}}" arm.  </p>
+
+<p>A p-value less than {{ttest1.alpha}} will be considered statistically significant.</p>
+
+Justification of sample size:  
+<br>
+The sample size of {{ttest1.n_per_arm}} per arm was determined based on these assumptions:  <br>
+*	<t>power={{ttest1.power}}<br> </t>
+*	significance level of test={{ttest1.alpha}}<br>
+*	mean and standard deviation in {{ttest1.arm1 }} arm under the alternative hypothesis={{ttest1.mu_1}} and {{ttest1.sigma1}}  <br>
+*	mean and standard deviation in {{ttest1.arm2 }} arm under the alternative hypothesis={{ttest1.mu_2}} and {{ttest1.sigma2}}
+
+</form>
+</html>
+{% endblock %}

@@ -1,0 +1,42 @@
+﻿{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+
+<form action="step2">
+{% if result %}
+{% csrf_token %}
+    <fieldset>
+	<div>
+	    Do you expect sex to have an effect on the endpoint
+		<select id='endeffect' name='endeffect' default=0 >
+		<option selected='selected' value=0>No</option>
+		<option value=1>Yes</option>
+		</select>
+    </div>
+	</fieldset>
+	
+{% else %}
+{% csrf_token %}
+<fieldset>
+	<div>
+       What is the type of the endpoint?
+		<select id='endeffect' name='endeffect' default=0>
+		<option value=2>dichotomous</option>
+		<option value=3>survival- LOG RANK TEST</option>
+		{# <option value=4>count- POISSON</option> #}
+		<option value=5>measurement 2 arms- T-TEST</option>
+		<option value=7>measurement greater than 2 arms- ANOVA</option>
+		<option value=6>multi-categorical- CHI SQUARE</option>
+		
+		</select>
+    </div>
+</fieldset>
+	
+{% endif %}	
+</br>
+<input type="submit" />
+</form>
+</html>
+{% endblock %}

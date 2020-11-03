@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>RIGHTSIZE</title>
+</head>
+<html>
+<li><a href="{% url 'home' %}">Home</a></li> 
+<li><a href="{{request.META.HTTP_REFERER}}">Go back</a></li>
+<body bgcolor="F1D6A5">
+    {% block content%}
+
+
+
+    {%endblock%}
+</body>
+<footer>
+	<p>©Copyright 2020 UPMC Hillman Cancer Center Biostatistics Facility. </p>
+</footer>
+</html>

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+</head>
+	<header>
+	SEX EFFECT ON ENDPOINT -SURVIVAL- LOGRANK
+	</header>
+	<form action="logrank" >	
+		<div>
+		<main>
+			<table>
+			<tr><td>Enter the value for alpha:</td><td><input type='text' id='alpha' name='alpha' value=0.05></input></td></tr>
+			<tr><td>Enter the value for power:</td><td><input type='text' id='power' name='power' value=0.8></input></td></tr>
+			<tr><td>Enter the end of the observation period T:</td><td><input type='text' id='observation' name='observation' value=10 ></input></td></tr>
+			<tr><td>Enter the number of arms:</td><td><input type='text' id='arms' name='arms' ></input></td></tr>
+			 <input type="hidden" id="flag" name="flag" value='1'>
+			</table>
+			</br>
+			<fieldset>
+			<legend> Enter the same number of values for each sex </legend>
+			Enter the expected median survival for each arm under the alternative hypothesis (Male)    : <input type='text' id='valuelist' name='valuelist' placeholder='enter spaces between values'></input></br></br>
+			Enter the expected median survival for each arm under the alternative hypothesis (Female)  : <input type='text' id='valuelistf' name='valuelistf' placeholder='enter spaces between values'></input>
+			</fieldset>
+			
+		</div>
+		<input type="submit"/>
+		</main>
+	</form>
+
+
+
+{% endblock %}

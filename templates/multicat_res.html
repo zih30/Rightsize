@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+<li><a href="{% url 'home' %}">Home</a></li> 
+{% load static %}
+{% block content %}
+<h4>Analysis plan:  Fisher's exact test will be used to test the null hypothesis that {col_var_name} and {row_var_name} are independent at alpha={{chisq1.alpha}}.
+
+</br>Justification of sample size:  The total sample size of {{chisq1.n_per_arm }} animals was determined based on the assumptions that </br>* alpha={{chisq1.alpha}}, </br> * power={{chisq1.power}} </br>and 
+under the alternative hypothesis, the proportions of animals in each design cell are:
+<p>-----------------------------
+<table>
+    {% for row in chisq1.pi_1 %}
+        <tr>
+        {% for cell in row %}
+            {% if forloop.first or forloop.parentloop.first %} <th> {% else %} <td> {% endif %}
+                {{ cell }}
+            {% if forloop.first or forloop.parentloop.first %} </th> {% else %} </td> {% endif %}
+        {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+-------------------------------</p>
+</h4>
+{{chisq1.rows}}
+{{chisq1.cols}}
+{% endblock %}

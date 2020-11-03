@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+<li><a href="{% url 'home' %}">Home</a></li> 
+{% load static %}
+{% block content %}
+<h4>The null hypothesis of no differences in survival between the arms will be tested by a </br> logrank test on the Kaplan-Meier estimates of the survival functions at alpha={{logrank.alpha}}.</br>
+</br>The sample size of {{logrank.n_per_arm}} animals per arm was derived by assuming that the median survival in the arms is [{{logrank.matrix}}] and that the animals will be followed until time {{logrank.observation}} </br>
+Under these assumptions, the test will have {100*{{logrank.power}}}% power to reject the null hypothesis.</h4>
+
+{% endblock %}
