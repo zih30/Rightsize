@@ -17,8 +17,23 @@ def home(request):
 
 
 def add(request):
-        val1= int(request.GET['both']);
-        return render(request,"result.html",{'result':val1});
+        val1= int(request.GET['seximpact']);
+        val2= int(request.GET['groups']);
+        if val1==1:
+            if val2==0:
+                return render(request, "ttest.html",{'seximpact':val1,
+                                                 'groups':val2} );
+            elif val2==1:
+                return render(request, "count.html",{'seximpact':val1,
+                                                 'groups':val2} );
+        else:
+            if val2==0:
+                return render(request, "multicat.html",{'seximpact':val1,
+                                                 'groups':val2} );
+            elif val2==1:
+                return render(request, "survival.html",{'seximpact':val1,
+                                                 'groups':val2} );
+
         
         
 def step2(request):

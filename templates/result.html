@@ -3,10 +3,10 @@
 {% load static %}
 {% block content %}
 
-
 <form action="step2">
 {% if result %}
 {% csrf_token %}
+	
     <fieldset>
 	<div>
 	    Do you expect sex to have an effect on the endpoint
