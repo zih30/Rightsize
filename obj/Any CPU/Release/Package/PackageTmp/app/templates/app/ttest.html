@@ -1,0 +1,33 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+<script>
+        function goBack() {
+            window.history.back()
+        }
+</script>
+<div class="main-container" style="margin-bottom:-100px">
+    <h1 style="text-transform:uppercase">{{ testname }}</h1>
+</div>
+
+<form action="ttest" >
+    <div class="main-container" style="background-color: #e8e9ee; border-radius:3px">
+		<table style="width:100%">
+		<tr><td>Enter the value for alpha:</td><td><input type='text' id='alpha' name='alpha'value=0.05 ></td></tr>
+		<tr><td>Enter the value for power:</td><td><input type='text' id='power' name='power' value=0.8 ></td></tr>
+		<tr><td>Enter the description for Arm1:</td><td><input type='text' id='arm1' name='arm1'></td></tr>
+		<tr><td>Enter the expected mean for Arm1: </td><td><input type='text' id='mu_1' name='mu_1'></td></tr>
+		<tr><td>Enter the expected standard deviation for Arm1:</td><td><input type='text' id='sigma1' name='sigma1'></td></tr>
+		<tr><td>Enter the description for Arm2:</td><td><input type='text' id='arm2' name='arm2'></td></tr>
+		<tr><td>Enter the expected mean for Arm2: </td><td><input type='text' id='mu_2' name='mu_2'></td></tr>
+		<tr><td>Enter the expected standard deviation for Arm2:</td><td><input type='text' id='sigma2' name='sigma2'></td></tr>
+		</table>
+	<br />
+<input  type="submit" value="Calculate Sample Size" /> 
+    <button class="btn btn-info btn-lg" role="button" onclick="goBack()">Go Back</button>
+        <a type="button" href="/" class="btn btn-info btn-lg" role="button">Start Over</a> 
+	</div>	
+</form>
+
+
+{% endblock %}

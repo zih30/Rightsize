@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->   
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+    <title>{{ title }} - Test</title>
+
+
+
+ <!--  <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script> -->
+</head>
+<body>
+    <div id="pittbar" class="header" role="banner">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html>
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class=" col">
+                <div class="pitt-shield">
+                    <a href="http://www.pitt.edu" title="University of Pittsburgh"><img src="{% static 'app/img/pitt_shield_white.png' %}" alt="University of Pittsburgh Shield"></a>
+                </div>
+
+                <div class="site-identity">
+                    <a href="/">RIGHTSIZE by UPMC Hillman Cancer Center Biostatistics</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+    </div>
+
+    <div class="main-container container">
+        <div class="row">
+            <div class="col">
+             {% block content %}{% endblock %}   
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="site_title">
+                            <div class="pitt-shield"><img src="{% static 'app/img/pitt_shield_white.png' %}" alt="University of Pittsburgh shield"></div>
+
+                            <div class="site-identity">
+                                <a href="/">RIGHTSIZE by UPMC Hillman Cancer Center Biostatistics</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="sections">
+                            <section>
+                                <div class="contact-info">
+                                    <p>Sterling Plaza Suite 325<br>
+                                    201 North Craig Street<br>
+                                    Pittsburgh, PA 15213</p>
+
+                                    <p>412-383-1537<br>
+                                    <a href="mailto:email@pitt.edu">email@pitt.edu</a></p>
+                                </div>
+                            </section>
+
+                            <section>
+                                <h3>Resources</h3>
+
+                                <ul class="two-column">
+                                    <li><a href="/">Quae ab illo inventore</a></li>
+
+                                    <li><a href="/">Veritatis et quasi</a></li>
+
+                                    <li><a href="/">Architecto beatae</a></li>
+
+                                    <li><a href="/">Vitae dicta sunt</a></li>
+
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div id="copyright">
+                            <span>Copyright 2020</span> <a href="https://www.communications.pitt.edu/website-feedback" target="_blank">Send feedback about this site.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer><script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous" type="text/javascript">
+</script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous" type="text/javascript">
+</script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous" type="text/javascript">
+</script>
+</body>
+</html>
+

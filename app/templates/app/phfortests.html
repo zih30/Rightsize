@@ -1,0 +1,15 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h3>{{ message }}</h3>
+
+<p>
+    <script>
+        document.write('<a href="' + document.referrer + '">Go Back</a>');
+    </script>
+</p>
+<p><a title="temp" href="../">Start Over</a> </p>
+
+
+{% endblock %}

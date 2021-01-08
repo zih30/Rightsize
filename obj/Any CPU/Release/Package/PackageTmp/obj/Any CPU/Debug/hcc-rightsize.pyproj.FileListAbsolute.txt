@@ -1,0 +1,3 @@
+C:\Users\ZIH30\dev\source\repos\hcc-rightsize\obj\Any CPU\Debug\hcc-rightsize.pyproj.CoreCompileInputs.cache
+C:\Users\ZIH30\dev\source\repos\hcc-rightsize\bin\Microsoft.PythonTools.WebRole.dll
+C:\Users\ZIH30\dev\source\repos\hcc-rightsize\bin\wfastcgi.py

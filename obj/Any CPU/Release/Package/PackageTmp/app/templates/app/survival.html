@@ -1,0 +1,39 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="main-container">
+    <h1 style="text-transform:uppercase">Comparing {{ arm }}</h1>
+</div>
+
+<form action="add3" >
+       <div class="main-container">
+       <h4>{{ message }}</h4>
+       1. Will you be using animals of both sexes?
+      <br />
+      <br />
+      <input type="radio" id="noimpact" name="seximpact" value=0 required>
+      <label for=0>No.</label><br>
+      <input type="radio" id="yesimpact" name="seximpact" value=1>
+      <label for=1>Yes.</label><br>
+      <input type="radio" id="onesex" name="seximpact" value=0>
+      <label for=0>Yes, but I don't believe sex has an impact in my study.</label><br>
+
+       <br />
+       <br />
+
+       2. How many groups of animals will you compare?
+       <br />
+       <br />
+      <input type="radio" id="2groups" name="groups" value=0 required>
+      <label for=0>2 groups.</label><br>
+      <input type="radio" id="2+groups" name="groups" value=1>
+      <label for="1">More than 2 groups.</label><br>
+      <br />
+       <input type="submit" /> <a type="button" href="../" class="btn btn-info btn-lg" role="button">Start Over</a> 
+       </div>
+	
+
+</form>
+
+{% endblock %}
