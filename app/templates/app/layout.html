@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->   
+    <!-- Bootstrap CSS -->
     {% load staticfiles %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" type="text/css">
     <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
@@ -27,7 +27,7 @@
         <div class="row">
             <div class=" col">
                 <div class="pitt-shield">
-                    <a href="http://www.pitt.edu" title="University of Pittsburgh"><img src="{% static 'app/img/pitt_shield_white.png' %}" alt="University of Pittsburgh Shield"></a>
+                    <a href="http://www.pitt.edu" title="University of Pittsburgh"><img src="{% static 'pitt_shield_white.png' %}" alt="University of Pittsburgh Shield"></a>
                 </div>
 
                 <div class="site-identity">
@@ -43,7 +43,7 @@
     <div class="main-container container">
         <div class="row">
             <div class="col">
-             {% block content %}{% endblock %}   
+             {% block content %}{% endblock %}
             </div>
         </div>
     </div>
@@ -110,4 +110,3 @@
 </script>
 </body>
 </html>
-
