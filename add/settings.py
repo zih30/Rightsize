@@ -60,7 +60,7 @@ MIDDLEWARE = [
 ]
 
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # POST_BUILD_SCRIPT_PATH = './scripts/post.sh'
 
 
