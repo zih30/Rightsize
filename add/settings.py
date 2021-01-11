@@ -26,9 +26,12 @@ SECRET_KEY = '8r4ta_fr5y%w654^x&*$xzq3f8opg_$z)(b=b!cs-hnb#u0re$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    '*',
+    '.azurewebsites.net'
+]
 
-#'.azurewebsites.net'
+#
 
 
 # Application definition
