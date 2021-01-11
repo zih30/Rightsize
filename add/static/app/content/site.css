@@ -1,5 +1,5 @@
 /*
-**** DEVELOPER NOTES ***    
+**** DEVELOPER NOTES ***
 The styles indicated below are an example and
 should mainly be used for reference.
 
@@ -214,6 +214,7 @@ th, td {
     }
 
     .footer .pitt-shield img {
+        background: url(../img/pitt_shield_white.png)
         width: 120px;
         height: auto;
     }
@@ -381,5 +382,5 @@ th, td {
     }
 
         .btn-info:not(:disabled):not(.disabled).active:focus, .btn-info:not(:disabled):not(.disabled):active:focus, .show > .btn-info.dropdown-toggle:focus {
-            
+
         }
