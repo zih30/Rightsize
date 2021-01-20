@@ -6,32 +6,27 @@
             window.history.back()
         }
 </script>
-<div class="main-container" style="margin-bottom:-100px">
-    <h1 style="text-transform:uppercase">{{ testname }} test test test </h1>
-</div>
-
-<div class="main-container" style="background-color: #e8e9ee; border-radius:3px">
-<form action="logrank" >
-    
-		<table style="width:100%">
+<div class="main-container" >
+    <h2 style="text-transform:uppercase">{{ testname }}</h2>
+<div class="card">
+          <form action="logrank" >
+    		  <table style="width:100%">
 			<tr><td>Enter the value for alpha:</td><td align="right"><input type='text' id='alpha' name='alpha' value=0.05></input></td></tr>
 			<tr><td>Enter the value for power:</td><td align="right"><input type='text' id='power' name='power' value=0.8></input></td></tr>
 			<tr><td>Enter the end of the observation period T:</td><td align="right"><input type='text' id='observation' name='observation' value=10 ></input></td></tr>
 			<tr><td>Enter the number of arms:</td><td align="right"><input type='text' id='arms' name='arms' ></input></td></tr>
-            
+
 			 <input type="hidden" id="flag" name="flag" value='1'>
-             </table>
-			<table style="width:100%">	
-			<caption> Enter the same number of values for each sex </caption>
+      </table>
+			<table style="width:100%">
 			<tr><td> Enter the expected median survival for each arm under the alternative hypothesis (Male)    : </td><td align="right"><input size="30" type='text' id='valuelist' name='valuelist' placeholder='enter spaces between values'></input></td></tr>
 			<tr><td>Enter the expected median survival for each arm under the alternative hypothesis (Female)  : </td><td align="right"><input size="30" type='text' id='valuelistf' name='valuelistf' placeholder='enter spaces between values'></input>
 			</table>
-	<br />
-<input  type="submit" value="Calculate Sample Size" /> 
-</form>
-	
-    <button type ="button" class="btn btn-info btn-lg" role="button" onclick="goBack()">Go Back</button>
-        <a type="button" href="/" class="btn btn-info btn-lg" role="button">Start Over</a> 
+	    <br />
+      <input  type="submit" value="Calculate Sample Size" />
+      <button type ="button" class="btn btn-info btn-lg" role="button" onclick="goBack()">Go Back</button>
+      <a type="button" href="/" class="btn btn-info btn-lg" role="button">Start Over</a>
+      </form>
 </div>
-
+</div>
 {% endblock %}
