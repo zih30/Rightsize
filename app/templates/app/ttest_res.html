@@ -7,21 +7,22 @@
         }
 </script>
 <div class="main-container">
-    <div class="row"><h1 style="text-transform:uppercase">{{ title }}</h1>
+    <div class="row">
+      <h2 style="text-transform:uppercase">{{ title }}</h2>
     </div>
-<p>A two-sample, two-tailed t-test using Satterthwaite's approximation to the degrees of freedom 
+<p>A two-sample, two-tailed t-test using Satterthwaite's approximation to the degrees of freedom
 will be used to test the null hypothesis that the population of the "{{result.arm1 }}" arm equals that of the "{{result.arm2}}" arm.  </p>
 
 <p>A p-value less than {{result.alpha}} will be considered statistically significant.</p>
 
-Justification of sample size:  
+Justification of sample size:
 <br />
 The sample size of {{result.n_per_arm}} per arm was determined based on these assumptions:  <br>
 *	<t>power={{result.power}}<br> </t>
 *	significance level of test={{result.alpha}}<br>
 *	mean and standard deviation in {{result.arm1 }} arm under the alternative hypothesis={{result.mu_1}} and {{result.sigma1}}  <br>
 *	mean and standard deviation in {{result.arm2 }} arm under the alternative hypothesis={{result.mu_2}} and {{result.sigma2}}
-    
+
     <div class="row">
         <button class="btn btn-info btn-lg" role="button" onclick="goBack()">Go Back</button>
 

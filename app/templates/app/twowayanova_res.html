@@ -7,14 +7,14 @@
         }
 </script>
 <div class="main-container">
-    <div class="row"><h1 style="text-transform:uppercase">{{ title }}</h1>
+    <div class="row"><h2 style="text-transform:uppercase">{{ title }}</h2>
     </div>
     <div class="row">
 <p>The primary endpoint will be analyzed by means of two-way ANOVA, with sex and their interaction as main effects. <br />
 The global null hypothesis will be tested at alpha={{anova2way.alpha}}.  <br />
-The sample size of {{anova2way.n_per_arm}} per cell was determined so that the global test would have {{anova2way.power}} power under the 
-alternative hypothesis specified by the expected cell means {{anova2way.mus}}, 
-where the within-cell standard deviation was assumed to be {{anova2way.sigma}}. 
+The sample size of {{anova2way.n_per_arm}} per cell was determined so that the global test would have {{anova2way.power}} power under the
+alternative hypothesis specified by the expected cell means {{anova2way.mus}},
+where the within-cell standard deviation was assumed to be {{anova2way.sigma}}.
 {{anova2way.test}}</p>
     </div>
     <div class="row">
