@@ -85,7 +85,7 @@ def add2(request):
                                                  'groups':val2,
                                                  'testname': "Chi Sq Test"} );
 def add3(request):
-    # Rates and Proportions
+    # survival
         val1= int(request.GET['seximpact']);
         val2= int(request.GET['groups']);
         if val1==1:
@@ -500,7 +500,8 @@ def logrank(request):
 
         logrank.n_per_arm = sample_size_log(logrank.arms,logrank.alpha,logrank.meds,logrank.power,logrank.observation);
 
-        return render(request,"app/survival_res.html",{'logrank':logrank, 'flag':flag});
+        return render(request,"app/survival_res.html",{'logrank':logrank, 'flag':flag,
+                                                        'title':"Results"});
 #---------------------------------------------------------------------------------------------
 #******************************************************************************************************************
 #******************************************************************************************************************
