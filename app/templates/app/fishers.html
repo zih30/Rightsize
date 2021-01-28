@@ -1,8 +1,6 @@
 ﻿{% extends "app/layout.html" %}
-
 {% block content %}
 <html>
-
 <head>
 
     <script type="text/javascript">
@@ -73,7 +71,7 @@ function addColumn(tableID) {
 
 	var table = document.getElementById(tableID), // table reference
 	tr = table.getElementsByTagName("tr");
-	
+
 	for (i = 0; i <=2;i++) {
 		var td = document.createElement('td');
 		var input = document.createElement('INPUT');
@@ -156,7 +154,7 @@ function deleteColumns(tableID) {
     </div>
     <input type="submit" onclick="verifyData('dataTable1')" value="Calculate Sample Size" />
 	    <button class="btn btn-info btn-lg" role="button" onclick="goBack()">Go Back</button>
-        <a type="button" href="/" class="btn btn-info btn-lg" role="button">Start Over</a> 
+        <a type="button" href="/" class="btn btn-info btn-lg" role="button">Start Over</a>
     </main>
 </form>
 
