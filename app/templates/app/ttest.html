@@ -6,12 +6,34 @@
             window.history.back()
         }
 </script>
-<div class="main-container" style="margin-bottom:-100px">
-    <h1 style="text-transform:uppercase">{{ testname }}</h1>
+<div class="main-container">
+    <h2 style="text-transform:uppercase">{{ testname }}</h2>
+    <p>This test is used when we are interested in the difference in means/medians by comparing quantities from two independent samples.
+      To estimate a minimal sample size needed for this test, please fill in the values in the table
+    below. <br>
+ </p>
+    <div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse1">click to see an example</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse">
+      <div class="panel-body"> For example, if the study of interest is aiming for a significance level of <strong>0.05</strong>, and a power of <strong>80%(or 0.8)</strong>.
+        And we expect a group with <strong>"treatment A"</strong>
+      to have a mean weight of <strong>100</strong>g with a standard deviation of <strong>10</strong>g, while another group with <strong>"treatment B"</strong> to have a mean
+       weight of <strong>120</strong>g with a standard deviation of <strong>15</strong>g. <br>
+       We would put in <strong>0.05, 0.8, "treatment A", 100, 10, "treatment B", 120, 15</strong> in the table below.</div>
+      </div>
+  </div>
+</div>
+<div class="row">
+<p> </p>
 </div>
 
+<div class="card">
 <form action="ttest" >
-    <div class="main-container" style="background-color: #e8e9ee; border-radius:3px">
 		<table style="width:100%">
 		<tr><td>Enter the value for alpha:</td><td><input type='text' id='alpha' name='alpha'value=0.05 ></td></tr>
 		<tr><td>Enter the value for power:</td><td><input type='text' id='power' name='power' value=0.8 ></td></tr>
@@ -23,11 +45,11 @@
 		<tr><td>Enter the expected standard deviation for Arm2:</td><td><input type='text' id='sigma2' name='sigma2'></td></tr>
 		</table>
 	<br />
-<input  type="submit" value="Calculate Sample Size" /> 
+<input  type="submit" value="Calculate Sample Size" />
     <button class="btn btn-info btn-lg" role="button" onclick="goBack()">Go Back</button>
-        <a type="button" href="/" class="btn btn-info btn-lg" role="button">Start Over</a> 
-	</div>	
+        <a type="button" href="/" class="btn btn-info btn-lg" role="button">Start Over</a>
 </form>
-
+</div>
+</div>
 
 {% endblock %}

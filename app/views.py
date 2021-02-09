@@ -21,9 +21,9 @@ def home(request):
         request,
         'app/index.html',
         {
-            'title':'Home',
+            'title':'RightSize - Home',
             'message': 'Welcome To RightSize!',
-            'content': 'test',
+            'content': 'Home',
         }
     )
 
@@ -31,7 +31,7 @@ def add1(request):
     # Means and quantities
         val1= int(request.GET['seximpact']);
         val2= int(request.GET['groups']);
-        if val1==1: 
+        if val1==1:
             # sex has impact
             if val2==0:
                 # Comparing 2 groups
@@ -60,7 +60,7 @@ def add2(request):
     # Rates and Proportions
         val1= int(request.GET['seximpact']);
         val2= int(request.GET['groups']);
-        if val1==1: 
+        if val1==1:
             # sex has impact
             if val2==0:
                 # Comparing 2 groups
@@ -85,10 +85,10 @@ def add2(request):
                                                  'groups':val2,
                                                  'testname': "Chi Sq Test"} );
 def add3(request):
-    # Rates and Proportions
+    # survival
         val1= int(request.GET['seximpact']);
         val2= int(request.GET['groups']);
-        if val1==1: 
+        if val1==1:
             # sex has impact
             if val2==0:
                 # Comparing 2 groups
@@ -126,7 +126,7 @@ def contact(request):
         }
     )
 
-def mandq(request): 
+def mandq(request):
     #Means and Quantities
     """Renders the means/quantities page."""
     assert isinstance(request, HttpRequest)
@@ -141,7 +141,7 @@ def mandq(request):
         }
     )
 
-def randp(request): 
+def randp(request):
     #Rates and Proportions
     """Renders the rates/proportions page."""
     assert isinstance(request, HttpRequest)
@@ -156,7 +156,7 @@ def randp(request):
         }
     )
 
-def survival(request): 
+def survival(request):
     #Survival
     """Renders the survival page."""
     assert isinstance(request, HttpRequest)
@@ -173,7 +173,7 @@ def survival(request):
 
 
 
-def phfortests(request): 
+def phfortests(request):
     #Placeholder for tests
     """Renders the [] page."""
     assert isinstance(request, HttpRequest)
@@ -187,7 +187,7 @@ def phfortests(request):
         }
     )
 
-def fishersandsex(request): 
+def fishersandsex(request):
     # Rates and Proportions + sex + any groups
     """Renders the test page for fishers."""
     assert isinstance(request, HttpRequest)
@@ -203,7 +203,7 @@ def fishersandsex(request):
 
 
 
-#******************************************************************************************************************            
+#******************************************************************************************************************
 #---------------------------------------------------------------------------------------------
 #   This function calculates the power of a two-sample, two-tailed
 #   t-test given:
@@ -220,9 +220,9 @@ def t_test_power(alpha,mu_1,mu_2,n_1,n_2,sigma_1,sigma_2):
     theta = (mu_1-mu_2)/((sigma_1**2/n_1+sigma_2**2/n_2)**0.5)
 
     t_cut = t.ppf(1-alpha/2,nu)
-    
+
     power = 1-(nct.cdf(t_cut,nu,theta)-nct.cdf(-t_cut,nu,theta))
-    
+
     return power
 #---------------------------------------------------------------------------------------------
 #---This function uses t_test_power to determine the required sample size
@@ -247,11 +247,11 @@ def sample_sizet(alpha,mu_1,mu_2,sigma_1,sigma_2,power):
     return n
 #---------------------------------------------------------------------------------------------
 # This functions calculates the inputs for the t-test.
-#---------------------------------------------------------------------------------------------    
+#---------------------------------------------------------------------------------------------
 def ttest(request):
 
         ttest1= Ttest()
-        
+
         ttest1.alpha= float(request.GET['alpha']);
         ttest1.arm1 = request.GET['arm1'];
         ttest1.arm2 = request.GET['arm2'];
@@ -260,14 +260,14 @@ def ttest(request):
         ttest1.sigma1= float(request.GET['sigma1']);
         ttest1.sigma2= float(request.GET['sigma2']);
         ttest1.power= float(request.GET['power']);
-        
+
         ttest1.n_per_arm = sample_sizet(ttest1.alpha,ttest1.mu_1,ttest1.mu_2,ttest1.sigma1,ttest1.sigma2,ttest1.power);
-           
+
         return render(request,"app/ttest_res.html",{'result':ttest1,
                                                     'title': "Results"});
-#******************************************************************************************************************                        
-#******************************************************************************************************************            
-#******************************************************************************************************************            
+#******************************************************************************************************************
+#******************************************************************************************************************
+#******************************************************************************************************************
 #   This function calculates the power of a chi-squared test for the
 #	independence of the rows and columns of an RxC contingency table
 #	given
@@ -291,13 +291,13 @@ def chisq_test_power(alpha,pi_1,N):
 	w = w*N
 
 	chisq_cut = chi2.ppf(1-alpha,(R-1)*(C-1))
-	
+
 	power = 1-ncx2.cdf(chisq_cut,(R-1)*(C-1),w)
-	
+
 	return power
 #---------------------------------------------------------------------------------------------
 #---This function uses chisq_test_power to determine the required sample size
-#   by simply starting at a low N and incrementing. 
+#   by simply starting at a low N and incrementing.
 #
 #	alpha significance level of test
 #	pi_1 array of probabilities undel alternative hypothesis
@@ -320,41 +320,41 @@ def sample_size_chisq(alpha,pi_1,power):
 	return N
 #---------------------------------------------------------------------------------------------
 # This functions calculates the inputs for the chisq-test.
-#---------------------------------------------------------------------------------------------    
+#---------------------------------------------------------------------------------------------
 def chisq(request):
 
         chisq1= ChiSQ();
-        
+
         flag = request.GET['flag'];
-        
+
         if flag == '1':
             chisq1.matrix1 = request.GET['valuelist1'];
             chisq1.matrix2 = request.GET['valuelist2'];
             entries1 = list(map(float,chisq1.matrix1.split()));
             entries2 = list(map(float,chisq1.matrix2.split()));
             entries = entries1 + entries2;
-        else:    
+        else:
             chisq1.matrix = request.GET['valuelist'];
             entries = list(map(float,chisq1.matrix.split()));
-        
+
         chisq1.alpha= float(request.GET['alpha']);
         chisq1.power= float(request.GET['power']);
-        
+
         chisq1.rows=int(request.GET['rows']);
         chisq1.cols=int(request.GET['cols']);
-        
+
         pi_1= np.array(entries).reshape(chisq1.rows,chisq1.cols);
 #        pi_1= np.array(entries).reshape(4,4);
-        
+
         chisq1.pi_1 = pi_1/np.sum(pi_1);
         chisq1.n_per_arm = sample_size_chisq(chisq1.alpha,chisq1.pi_1,chisq1.power);
-          
+
         return render(request,"app/chisq_res.html",{'chisq1':chisq1,
                                                     'title': "Results"});
 #---------------------------------------------------------------------------------------------
-#******************************************************************************************************************            
-#******************************************************************************************************************            
-#******************************************************************************************************************            
+#******************************************************************************************************************
+#******************************************************************************************************************
+#******************************************************************************************************************
 #---------------------------------------------------------------------------------------------
 #   This function calculates the power of an f-test given:
 #
@@ -366,19 +366,19 @@ def chisq(request):
 #---------------------------------------------------------------------------------------------
 def anovaf_test_power(arms,alpha,mus,n,sigma):
     ndf = arms-1
-    
+
     ddf = (arms-1)*(n)
 
     nu = n*sum((mus-np.mean(mus))**2)/sigma/sigma
-    
+
     f_cut = f.ppf(1-alpha,ndf,ddf)
-    
+
     power = 1-ncf.cdf(f_cut,ndf,ddf,nu)
-    
+
     return power
 #---------------------------------------------------------------------------------------------
 #   This function uses f_test_power to determine the required sample size
-#   by starting at a low n (3) and incrementing.  
+#   by starting at a low n (3) and incrementing.
 #
 #   If alpha, power or sigma are out of range, the function
 #   returns 0, which is an error code
@@ -391,50 +391,50 @@ def sample_size_anova(arms,alpha,mus,sigma,power):
         while the_power < power and n<10000:
             n = n+1
             the_power = anovaf_test_power(arms,alpha,mus,n,sigma)
-            
+
     return n
 #---------------------------------------------------------------------------------------------
 # This functions calculates the inputs for the anova test
-#---------------------------------------------------------------------------------------------  
+#---------------------------------------------------------------------------------------------
 def anova(request):
 
         anova1= Anova();
-        
+
         entries=[];
         flag = request.GET['flag'];
-        
+
         if flag == '1':
             anova1.matrixf = request.GET['valuelistf']
             entries = list(map(float,anova1.matrixf.split()))
-            
+
         anova1.alpha= float(request.GET['alpha']);
         anova1.matrix = request.GET['valuelist'];
         anova1.power=float(request.GET['power']);
         anova1.sigma=float(request.GET['sigma']);
         anova1.arms=float(request.GET['arms']);
-		
+
         entries= entries + (list(map(float,anova1.matrix.split())));
         anova1.mus = np.array([entries],dtype=float);
         anova1.len=len(anova1.mus);
         anova1.n_per_arm = sample_size_anova( anova1.arms,anova1.alpha,anova1.mus,anova1.sigma,anova1.power);
-        
+
         return render(request,"app/anova_res.html",{'anova1':anova1,'flag':flag,
                                                 'title':"Results"});
-        
+
 #---------------------------------------------------------------------------------------------
-#******************************************************************************************************************            
-#******************************************************************************************************************            
-#******************************************************************************************************************            
+#******************************************************************************************************************
+#******************************************************************************************************************
+#******************************************************************************************************************
 #---------------------------------------------------------------------------------------------
 #   This function uses logrank_test_power to determine the required sample size
-#   by simply starting at a low N and incrementing. 
+#   by simply starting at a low N and incrementing.
 #
 #       alpha significance level of test
 #       pi_1 array of probabilities undel alternative hypothesis
 #       power desired power
 #       T end of observation period
 #
-#   If alpha or power are out of range, the function returns 0, which is an 
+#   If alpha or power are out of range, the function returns 0, which is an
 #       error code.  Otherwise, it returns the sample size
 #---------------------------------------------------------------------------------------------
 def sample_size_log(arms,alpha,meds,power,T):
@@ -450,7 +450,7 @@ def sample_size_log(arms,alpha,meds,power,T):
 
 #---------------------------------------------------------------------------------------------
 #---This function calculates the power of the log-rank test
-#       for the equality of k survival functions 
+#       for the equality of k survival functions
 #
 #   Significance level alpha
 #   Alternative median survivals meds
@@ -462,7 +462,7 @@ def sample_size_log(arms,alpha,meds,power,T):
 def logrank_test_power(arms,alpha,meds,N,T):
 
         K = arms
-       
+
         hs = math.log(2)/meds
         lhs = np.log(hs)
         psi_2 = 0
@@ -481,38 +481,39 @@ def logrank(request):
             logrank.matrixf = request.GET['valuelistf']
             entries = list(map(float,logrank.matrixf.split()))
             logrank.arms=int(request.GET['arms']);
-        
+
         logrank.matrix = request.GET['valuelist'];
         logrank.alpha= float(request.GET['alpha']);
         logrank.power= float(request.GET['power']);
-        
+
         logrank.observation= float(request.GET['observation']);
-        
+
         entries = list(map(float,logrank.matrix.split())) + entries;
         logrank.meds = np.array([entries],dtype=float);
-        
+
         if flag == '1':
             logrank.meds=reshape(logrank.meds,(2,logrank.arms));
-           
-        
+
+
         if flag == '0':
            logrank.arms= logrank.meds.size
-        
+
         logrank.n_per_arm = sample_size_log(logrank.arms,logrank.alpha,logrank.meds,logrank.power,logrank.observation);
-           
-        return render(request,"app/survival_res.html",{'logrank':logrank, 'flag':flag});
+
+        return render(request,"app/survival_res.html",{'logrank':logrank, 'flag':flag,
+                                                        'title':"Results"});
 #---------------------------------------------------------------------------------------------
-#******************************************************************************************************************            
-#******************************************************************************************************************            
-#******************************************************************************************************************            
-#---------------------------------------------------------------------------------------------   
+#******************************************************************************************************************
+#******************************************************************************************************************
+#******************************************************************************************************************
+#---------------------------------------------------------------------------------------------
 #   This function calculates the power of an f-test given:
 #
 #   Significance level alpha
 #   Matrix of assumed population means mus
 #   Assumed population standard deviation sigma
 #   Common sample size n/cell, n
-#---------------------------------------------------------------------------------------------   
+#---------------------------------------------------------------------------------------------
 def anova2_test_power(arms,alpha,mus,n,sigma):
     n_cell=0
     ndf=0
@@ -525,13 +526,13 @@ def anova2_test_power(arms,alpha,mus,n,sigma):
     power = 1-ncf.cdf(f_cut,ndf,ddf,nu)
     return power
 
-#---------------------------------------------------------------------------------------------   
+#---------------------------------------------------------------------------------------------
 #   This function uses f_test_power to determine the required sample size
-#   by starting at a low n (3) and incrementing.  
+#   by starting at a low n (3) and incrementing.
 #
 #   If alpha, power or sigma are out of range, the function
 #   returns 0, which is an error code
-#---------------------------------------------------------------------------------------------   
+#---------------------------------------------------------------------------------------------
 def sample_size_anova2(arms,alpha,mus,sigma,power):
 
     n = 0
@@ -545,29 +546,29 @@ def sample_size_anova2(arms,alpha,mus,sigma,power):
 
 #---------------------------------------------------------------------------------------------
 # This functions calculates the inputs for the 2 WAY anova test
-#---------------------------------------------------------------------------------------------  
+#---------------------------------------------------------------------------------------------
 def anova2(request):
 
         anova2way= Anova2();
-        
+
         flag = request.GET['flag'];
         entries=[];
-                
-       
+
+
         anova2way.matrix = request.GET['valuelist'];
         entries = list(map(float,anova2way.matrix.split()))
-        anova2way.matrixf = request.GET['valuelistf']   
+        anova2way.matrixf = request.GET['valuelistf']
         anova2way.alpha= float(request.GET['alpha']);
-        
+
         anova2way.power=float(request.GET['power']);
         anova2way.sigma=float(request.GET['sigma']);
         anova2way.arms=float(request.GET['arms']);
-		
+
         entries= entries + (list(map(float,anova2way.matrixf.split())));
         anova2way.mus = np.array([entries],dtype=float);
-        
+
         anova2way.n_per_arm = sample_size_anova2( anova2way.arms,anova2way.alpha,anova2way.mus,anova2way.sigma,anova2way.power);
-        
+
 #        n_cell=0
 #        ndf=0
 #        ddf=0
@@ -578,7 +579,7 @@ def anova2(request):
 #        f_cut = f.ppf(1-anova2way.alpha,ndf,ddf)
 #        anova2way.test=f_cut
 #        power = 1-ncf.cdf(f_cut,ndf,ddf,nu)
-       
-        
+
+
         return render(request,"app/twowayanova_res.html",{'anova2way':anova2way,'flag':flag,
                                                       'title':"Results"});
