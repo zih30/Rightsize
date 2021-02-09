@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> parent of 1f4108e... Eliminate spacing on the website UI
@@ -13,6 +14,8 @@
 =======
 
 >>>>>>> parent of 1f4108e... Eliminate spacing on the website UI
+=======
+>>>>>>> parent of e09d3ae... Merge branch 'master' of https://github.com/zih30/Rightsize
 <h2 class="block_title block-title">{{message}}</h2>
 
 <p>(Placeholder 1 for brief intro) Maksym says the deployment center will not break again</p>
@@ -22,46 +25,78 @@
         <div class="col text-center">
             <a type="button" href="mandq" class="btn btn-info btn-lg" role="button">Means/Quantities</a>
             <p style="text-align: center">(placeholder 2 for explanations)</pstyle="text-align:>
-=======
-<style>
-div.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  padding:20px
-}
-</style>
 
-
->>>>>>> a0f8dc556677003ebdee3e65add6a138c11af46e
-
+        </div>
+        <div class="col text-center">
+            <a type="button" href="randp" class="btn btn-info btn-lg" role="button">Rates/Proportions</a>
+            <p style="text-align: center">(placeholder 3 for explanations)</pstyle="text-align:>
+        </div>
+        <div class="col text-center">
+            <a type="button" href="survival" class="btn btn-info btn-lg" role="button">Survival</a>
+            <p style="text-align: center">(placeholder 4 for explanations)</pstyle="text-align:>
+        </div>
+    </div>
+    <div class="row">
+        <p class="h2">OR</p>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p style="text-align: center"><a title="temp" href="mandq">Comparing Means/Quantities</a></p>
+            <p style="text-align: center">(placeholder 2 for explanations)</pstyle="text-align:>
+        </div>
+        <div class="col">
+            <p style="text-align: center"><a title="temp" href="randp">Comparing Rates/Proportions</a></p>
+            <p style="text-align: center">(placeholder 3 for explanations)</pstyle="text-align:>
+        </div>
+        <div class="col">
+            <p style="text-align: center"><a title="temp" href="survival">Comparing Survival</a></p>
+            <p style="text-align: center">(placeholder 4 for explanations)</pstyle="text-align:>
+        </div>
+    </div>
+</div>
 <div class="main-container">
-  <div class="row">
-    <div class="col">
-      <h2 class="block_title block-title">{{message}}</h2>
-        <p>RightSize estimates sample sizes for your studies. To begin, first determine the type of endpoint for your study by clicking on one of the buttons below. </p>
-      </div>
+    <div class="row">
+        <p class="h2">OR</p>
+    </div>
+    <div class="row">
+        <div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+        Comparing Means/Quantities</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse in">
+      <div class="panel-body">(placeholder 2 for explanations)</div>
+    </div>
   </div>
-  <div class="row">
-    <div class="col text-center">
-      <div class="card">
-      <p style="text-align: justify;font-size: 14px;height: 150px">Choose this if your endpoint is numerical, meaning you are measuring amounts for each subject and comparing the amounts between groups (e.g. tumor size, cytokine expression, or body weight).</p>
-      <a type="button" href="mandq" class="btn btn-info btn-lg" role="button">Means/Quantities</a>
-      </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+        Comparing Rates/Proportions</a>
+      </h4>
     </div>
-    <div class="col text-center">
-      <div class="card">
-              <p style="text-align: justify;font-size: 14px;height: 150px">Choose this if your endpoint is categorical, meaning you are measuring whether or not an endpoint has been achieved in each subject and comparing the proportions between groups (e.g. the occurance of adverse events, metastasis, or death).</p>
-              <a type="button" href="randp" class="btn btn-info btn-lg" role="button">Rates/Proportions</a>
-      </div>
+    <div id="collapse2" class="panel-collapse collapse">
+      <div class="panel-body">(placeholder 3 for explanations)</div>
     </div>
-    <div class="col text-center">
-      <div class="card">
-              <p style="text-align: justify;font-size: 14px;height: 150px">Choose this if your endpoint is time to event, meaning you are measuring the time to a particular event (e.g. time to death, or time to metastasis).</p>
-              <a type="button" href="survival" class="btn btn-info btn-lg" role="button">Survival</a>
-      </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+        Comparing Survival</a>
+      </h4>
+    </div>
+    <div id="collapse3" class="panel-collapse collapse">
+      <div class="panel-body">(placeholder 4 for explanations)</div>
     </div>
   </div>
 </div>
-
+    </div>
+</div>
+</div>
 {% endblock %}
 
 

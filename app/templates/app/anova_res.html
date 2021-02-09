@@ -6,27 +6,20 @@
 		window.history.back()
 	}
 </script>
-<div class="main-container">
-	<div class="row">
-    <h2 style="text-transform:uppercase">{{ title }}</h2>
-		</div>
-		<div class="row">
-		<p>
-        The null hypothesis that the means of the {{anova1.arms}} populations are equal will be tested by an F test. A p-value less than {{anova1.alpha}} will be considered statistically significant.
+<div class="main-container" style="margin-bottom:-100px">
+    <h1 style="text-transform:uppercase">{{ title }}</h1>
+
+    <p>
+        The null hypothesis that the means of the {{anova1.arms}} populations are equal will be tested by an F test.
     </p>
-    </div>
-		<div class="row">
-		<p>
-    The sample size of <strong> {{anova1.n_per_arm}} </strong> per arm was determined based on these assumptions:</p>
-</div>
-<div class="row">
-		<ul>
-			<li>power={{anova1.power}}</li>
-			<li>significance level of test={{anova1.alpha}}</li>
-			<li>within-arm standard deviation={{anova1.sigma}}</li>
-			<li>population means under the alternative hypothesis={{anova1.mus}}</li>
-		</ul>
-		</div>
+    <p>
+        A p-value less than {{anova1.alpha}} will be considered statistically significant.
+    </p>
+    Justification of sample size:
+    <br>
+    The sample size of {{anova1.n_per_arm}} per arm was determined based on these assumptions:  power={{anova1.power}}; significance level of test={{anova1.alpha}}; within-arm standard deviation={{anova1.sigma}}
+    <br>and population means under the alternative hypothesis={{anova1.mus}}
+    </p>
     <div class="row">
         <button class="btn btn-info btn-lg" role="button" onclick="goBack()">Go Back</button>
 

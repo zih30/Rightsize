@@ -10,7 +10,7 @@
 function verifyData(tableID) {
 
 		var table = document.getElementById(tableID);
-
+		
 		var row = " ";
 		for (var i = 0 ; i < table.rows.length; i++) {
 
@@ -22,8 +22,8 @@ function verifyData(tableID) {
 				}
 			}
 			row = " " + row +" ";
-		}
-
+		} 
+		
 		var value1=[row];
 		document.getElementById("valuelist").value=value1;
 		document.getElementById("rows").value=i;
@@ -39,18 +39,18 @@ function addRow(tableID) {
 
 	if(rowCount <6){							// limit the user from creating fields more than your limits
 	    var row = table.insertRow(rowCount);
-
+	    
 		var colCount = table.rows[0].cells.length;
 		for(var i=0; i<colCount; i++) {
 			var newcell = row.insertCell(i);
 			newcell.innerHTML = table.rows[0].cells[i].innerHTML;
-
+			
 		}
 	}else{
 		 alert("Maximum number of rows and columns you can enter is 6.");
-
+			   
 	}
-
+	
 }
 function deleteRow(tableID) {
 	var table = document.getElementById(tableID);
@@ -70,7 +70,7 @@ function deleteRow(tableID) {
 	}
 }
 function addColumn(tableID) {
-
+    
 	var table = document.getElementById(tableID), // table reference
 	tr = table.getElementsByTagName("tr");
 	for (i = 0; i < tr.length; i++) {
@@ -78,7 +78,7 @@ function addColumn(tableID) {
 		var input = document.createElement('INPUT');
 		input.type = 'float';
 		td.appendChild(input);
-		tr[i].appendChild(td);
+		tr[i].appendChild(td);	
 	}
  }
 
@@ -104,54 +104,59 @@ function deleteColumns(tableID) {
 </script>
 
 <div class="main-container">
-    <h2 style="text-transform:uppercase">{{ testname }}</h2>
-		<div class="card">
-			<form action="chisq" >
- 			<table>
+    <h1 style="text-transform:uppercase">{{ testname }}</h1>
+</div>
+
+
+	<form action="chisq" >	
+		<div>
+		<main>
+			<table>
 			<tr><td>Enter the value for alpha:</td><td><input type='text' id='alpha' name='alpha' value=0.05></input></td></tr>
 			<tr><td>Enter the value for power:</td><td><input type='text' id='power' name='power' value=0.8></input></td></tr>
 			<tr><td></td><td><input type='hidden' id='valuelist' name='valuelist'></input></td></tr>
 			<tr><td><input type='hidden' id='rows' name='rows' /></td></tr>
 			<tr><td><input type='hidden' id='cols' name='cols' /></td></tr>
 			<input type="hidden" id="flag" name="flag" value='0'>
-
+			
 <!--			<tr><td>Enter the number of columns:</td><td><input type='text' id='cols' name='cols'></input></td></tr> -->
 			</table>
-
+			
 			<br>
 
 		<legend>
-		<h3>Data entry matrix:</h3>
+		<h2>Data entry matrix:</h2>
 		</legend>
-		<p> <input type="button" value="Add Row " onClick="addRow('dataTable1')" />
+		<p> <input type="button" value="Add Row " onClick="addRow('dataTable1')" /> 
 			<input type="button" value="Delete Row" onClick="deleteRow('dataTable1')"  />
 			<input type="button" value="Add Column " onClick="addColumn('dataTable1')"  />
 			<input type="button" value="Delete Column" onClick="deleteColumns('dataTable1')"  />
 			<input type="reset" value="Clear" />
 		</p>
-
+        
 		<table id="dataTable1" name= "matrix" >
         <tbody>
 			<tr>
 			 <p>
-
+			
 				<td><input type='checkbox' required='required' name='chk[]' checked='checked' /></td>
 				<td><input type='float' id='val1' name='val1' ></input></td>
-
+               
 			   </p>
 			</tr>
         </tbody>
 		</table>
 		<br>
-
+		
 <!---		<input type="button" value="Verify Table Data" onClick="verifyData('dataTable1')"  /></input> --->
-
+		
 		<br>
+		</div>
 		<input type="submit" onclick="verifyData('dataTable1')" value="Calculate Sample Size" />
 	    <button class="btn btn-info btn-lg" role="button" onclick="goBack()">Go Back</button>
-        <a type="button" href="/" class="btn btn-info btn-lg" role="button">Start Over</a>
+        <a type="button" href="/" class="btn btn-info btn-lg" role="button">Start Over</a> 
+		</main>
 	</form>
-</div>
-</div>
+
 
 {% endblock %}

@@ -4,7 +4,7 @@
 
 <h2>{{ title }}</h2>
 
-
+<h4>
     Analysis plan:  Fisher's exact test will be used to test the null hypothesis that {col_var_name} and {row_var_name} are independent at alpha={{chisq1.alpha}}.
 
     </br>Justification of sample size:  The total sample size of {{chisq1.n_per_arm }} animals was determined based on the assumptions that </br>* alpha={{chisq1.alpha}}, </br> * power={{chisq1.power}} </br>and
@@ -28,10 +28,10 @@
         </table>
         -------------------------------
     </p>
+</h4>
 
-
-<!-- {{chisq1.rows}} -->
-<!-- {{chisq1.cols}} -->
+{{chisq1.rows}}
+{{chisq1.cols}}
 
     <div class="row">
         <button class="btn btn-info btn-lg" role="button" onclick="goBack()">Go Back</button>

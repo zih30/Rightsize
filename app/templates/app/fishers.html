@@ -106,10 +106,13 @@ function deleteColumns(tableID) {
 
 
 <div class="main-container">
-    <h2 style="text-transform:uppercase">{{ testname }}</h2>
-<div class="card">
+    <h1 style="text-transform:uppercase">{{ testname }}</h1>
+</div>
+
 <form action="chisq">
-          <table>
+    <div>
+        <main>
+            <table>
                 <tr><td>Enter the value for alpha:</td><td><input type='text' id='alpha' name='alpha' value=0.05></input></td></tr>
                 <tr><td>Enter the value for power:</td><td><input type='text' id='power' name='power' value=0.8></input></td></tr>
                 <tr><td></td><td><input type='hidden' id='valuelist' name='valuelist'></input></td></tr>
@@ -120,20 +123,28 @@ function deleteColumns(tableID) {
                 <!--			<tr><td>Enter the number of columns:</td><td><input type='text' id='cols' name='cols'></input></td></tr> -->
             </table>
 
+            <br>
+
             <legend>
-                <h3>Data entry matrix:2X2</h3>
+                <h2>Data entry matrix:2X2</h2>
             </legend>
+            <p>
                 <input type="button" value="Add Row " onclick="addRow('dataTable1')" />
                 <input type="button" value="Delete Row" onclick="deleteRow('dataTable1')" />
                 <input type="button" value="Add Column " onclick="addColumn('dataTable1')" />
                 <input type="button" value="Delete Column" onclick="deleteColumns('dataTable1')" />
 				<input type="reset" value="Clear" />
+            </p>
+
             <table id="dataTable1" name="matrix">
                 <tbody>
                     <tr>
+                        <p>
 
                         <td><input type='checkbox' required='required' name='chk[]' checked='checked' /></td>
                         <td><input type='float' id='val1' name='val1'></input></td>
+
+                        </p>
                     </tr>
                 </tbody>
             </table>
@@ -142,6 +153,7 @@ function deleteColumns(tableID) {
             <!---		<input type="button" value="Verify Table Data" onClick="verifyData('dataTable1')"  /></input> --->
 
             <br>
+    </div>
     <input type="submit" onclick="verifyData('dataTable1')" value="Calculate Sample Size" />
 	    <button class="btn btn-info btn-lg" role="button" onclick="goBack()">Go Back</button>
 <<<<<<< HEAD
@@ -149,6 +161,7 @@ function deleteColumns(tableID) {
 <<<<<<< HEAD
         <a type="button" href="/" class="btn btn-info btn-lg" role="button">Start Over</a>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         <a type="button" href="/" class="btn btn-info btn-lg" role="button">Start Over</a> 
 >>>>>>> parent of 1f4108e... Eliminate spacing on the website UI
@@ -158,20 +171,20 @@ function deleteColumns(tableID) {
 =======
         <a type="button" href="/" class="btn btn-info btn-lg" role="button">Start Over</a> 
 >>>>>>> parent of 1f4108e... Eliminate spacing on the website UI
+=======
+>>>>>>> parent of e09d3ae... Merge branch 'master' of https://github.com/zih30/Rightsize
     </main>
-=======
->>>>>>> a0f8dc556677003ebdee3e65add6a138c11af46e
 </form>
-</div>
-</div>
+
 
 <<<<<<< HEAD
-
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> a0f8dc556677003ebdee3e65add6a138c11af46e
+=======
+>>>>>>> parent of e09d3ae... Merge branch 'master' of https://github.com/zih30/Rightsize
 {% endblock %}
 =======
 {% endblock %}
