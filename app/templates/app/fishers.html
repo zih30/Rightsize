@@ -1,6 +1,8 @@
 ﻿{% extends "app/layout.html" %}
+
 {% block content %}
 <html>
+
 <head>
 
     <script type="text/javascript">
@@ -71,7 +73,7 @@ function addColumn(tableID) {
 
 	var table = document.getElementById(tableID), // table reference
 	tr = table.getElementsByTagName("tr");
-
+	
 	for (i = 0; i <=2;i++) {
 		var td = document.createElement('td');
 		var input = document.createElement('INPUT');
@@ -142,8 +144,12 @@ function deleteColumns(tableID) {
             <br>
     <input type="submit" onclick="verifyData('dataTable1')" value="Calculate Sample Size" />
 	    <button class="btn btn-info btn-lg" role="button" onclick="goBack()">Go Back</button>
+<<<<<<< HEAD
         <a type="button" href="/" class="btn btn-info btn-lg" role="button">Start Over</a>
 <<<<<<< HEAD
+=======
+        <a type="button" href="/" class="btn btn-info btn-lg" role="button">Start Over</a> 
+>>>>>>> parent of 1f4108e... Eliminate spacing on the website UI
     </main>
 =======
 >>>>>>> a0f8dc556677003ebdee3e65add6a138c11af46e
@@ -153,6 +159,10 @@ function deleteColumns(tableID) {
 
 <<<<<<< HEAD
 
+<<<<<<< HEAD
 =======
 >>>>>>> a0f8dc556677003ebdee3e65add6a138c11af46e
 {% endblock %}
+=======
+{% endblock %}
+>>>>>>> parent of 1f4108e... Eliminate spacing on the website UI
